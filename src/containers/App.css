@@ -1,0 +1,107 @@
+/*--------------------
+Body
+--------------------*/
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  margin: 0;
+  background: radial-gradient(ellipse farthest-corner at center top, #ffffff, #ebebeb);
+  color: #8b9095;
+  font-size: 14px;
+  font-family: 'Roboto', sans-serif;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+h2,
+h3,
+a {
+	color: #34495e;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	color: #718daa;
+}
+
+nav ul {
+   display: flex;
+   flex-direction: row;
+   padding: 1em;
+}
+
+form input{
+    display: block;
+}
+
+/*--------------------
+App
+--------------------*/
+.app {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 100vh;
+  height: 100vh;
+  background: #fff;
+  border-radius: 15px;
+  -webkit-box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2);
+}
+.app h2 {
+  color: #525661;
+  font-size: 17px;
+  -webkit-box-shadow: inset 0 1px 0px rgba(0, 0, 0, 0.1);
+          box-shadow: inset 0 1px 0px rgba(0, 0, 0, 0.1);
+  padding: 20px 28px 0;
+  margin: -6px 0 0 0;
+}
+
+/*--------------------
+Header
+--------------------*/
+header {
+  padding: 10px;
+  position: relative;
+}
+header h1 {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  font-size: 20px;
+  text-transform: uppercase;
+  text-align: center;
+  color: #1c222b;
+}
+.paginate{
+    display: flex;
+    /* padding: 10vh; */
+}
+
+.items{
+    padding-left: 5vh;
+    padding-right: 5vh;
+}
+
+.item {
+    background-color: rgb(245, 245, 245);
+    padding: 5px;
+    margin-bottom: 1px;
+}

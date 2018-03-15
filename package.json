@@ -1,27 +1,38 @@
 {
-  "name": "yummy-recipes-react-redux",
-  "version": "0.1.0",
+  "name": "yummyrecipes-",
+  "version": "0.0.1",
   "private": true,
+  "devDependencies": {
+    "enzyme": "^2.8.2",
+    "react-addons-test-utils": "^15.5.1",
+    "react-scripts": "^1.0.2"
+  },
   "dependencies": {
-    "axios": "^0.17.1",
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0",
-    "react-redux": "^5.0.6",
+    "ajv": "^6.2.1",
+    "ajv-keywords": "^3.1.0",
+    "axios": "^0.18.0",
+    "bootstrap": "^4.0.0",
+    "classnames": "^2.2.5",
+    "jquery": "^3.3.1",
+    "popper.js": "^1.14.1",
+    "prop-types": "^15.5.10",
+    "react": "^15.5.0",
+    "react-dom": "^15.5.0",
+    "react-js-pagination": "^3.0.1",
+    "react-notify-toast": "^0.4.0",
+    "react-redux": "^5.0.5",
     "react-router-dom": "^4.2.2",
-    "react-scripts": "1.1.0",
-    "redux": "^3.7.2",
+    "react-test-renderer": "^15.5.4",
+    "reactstrap": "^5.0.0-beta.2",
+    "redux": "^3.5.2",
     "redux-logger": "^3.0.6",
-    "redux-thunk": "^2.2.0"
+    "redux-thunk": "^2.2.0",
+    "todomvc-app-css": "^2.1.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "coverage": "react-scripts test --env=jsdom --coverage",
-    "coveralls": "cat ./coverage/lcov.info | node node_modules/.bin/coveralls"
-  },
-  "devDependencies": {
-    "coveralls": "^3.0.0"
+    "test": "react-scripts test"
   }
 }
