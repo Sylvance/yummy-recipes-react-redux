@@ -225,7 +225,7 @@ export const logoutUser = () => {
         window.location.assign("/login");
       })
       .catch(error => {
-        notify.show(error.response.data.message, 'error', 4000);
+        notify.show(error.response.data.message.message, 'error', 4000);
       });
   };
 };
@@ -242,6 +242,7 @@ export const registerUser = (username, email, password, firstname, lastname) => 
       .then(response => {
         dispatch(register(response.data))
         notify.show(response.data.message, 'success', 4000);
+        window.location.assign("/login");
       })
       .catch(error => {
         notify.show(error.response.data.message, 'error', 4000);

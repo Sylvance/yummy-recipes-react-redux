@@ -66,7 +66,7 @@ class App extends Component {
               <Col>
                 <Switch>
                     <Route path='/category' component={Category}/>
-                    <Route path='/categories/:categoryid/recipes' component={Recipe}/>
+                    <Route path='/categories/:categoryname/:categoryid/recipes' component={Recipe}/>
                     <Route path='/login' component={Login}/>
                     <Route path='/logout' component={Logout}/>
                     <Route path='/register' component={Register}/>

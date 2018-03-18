@@ -6,7 +6,8 @@ import RecipeFormInput from './RecipeFormInput'
 export default class RecipeHeader extends Component {
   static propTypes = {
     addRecipe: PropTypes.func.isRequired,
-    categoryid: PropTypes.number.isRequired
+    categoryid: PropTypes.number.isRequired,
+    categoryname: PropTypes.string.isRequired
   }
 
   constructor(props) {
@@ -27,6 +28,7 @@ export default class RecipeHeader extends Component {
   handleSave = (categoryid, title, description) => {
     if (title.length !== 0) {
       this.props.addRecipe(categoryid, title, description)
+      this.props.fetchRecipes(categoryid)
     }
     this.setState({
       modal: !this.state.modal
@@ -37,6 +39,7 @@ export default class RecipeHeader extends Component {
     return (
       <header className="header">
         <h1>Recipes</h1>
+        <h5>Category name : {this.props.categoryname}</h5>
         <Button color="primary" onClick={this.toggle}>Click here to add a recipe</Button>
         <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
           <ModalHeader toggle={this.toggle}>Add Recipe</ModalHeader>

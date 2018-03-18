@@ -28,6 +28,7 @@ export default class CategoryHeader extends Component {
   handleSave = (userid, title, description) => {
     if (title.length !== 0) {
       this.props.addCategory(userid, title, description)
+      this.props.fetchCategories(userid)
     }
     this.setState({
       modal: !this.state.modal

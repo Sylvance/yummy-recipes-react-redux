@@ -8,10 +8,10 @@ import RecipeMainSection from '../components/RecipeMainSection'
 
 import * as Actions from '../actions'
 
-const Recipe = ({recipes, categoryid, meta, actions, props}) => (
+const Recipe = ({recipes, categoryid, categoryname, meta, actions, props}) => (
   <div>
-    <RecipeHeader addRecipe={actions.addRecipe} categoryid={categoryid} />
-    <RecipeMainSection categoryid={categoryid} meta={meta} recipes={recipes} actions={actions} />
+    <RecipeHeader addRecipe={actions.addRecipe} fetchRecipes={actions.fetchRecipes} categoryid={categoryid} categoryname={categoryname} />
+    <RecipeMainSection categoryid={categoryid} categoryname={categoryname} meta={meta} recipes={recipes} actions={actions} />
   </div>
 )
 
@@ -25,7 +25,8 @@ Recipe.propTypes = {
 const mapStateToProps = (state, props) => ({
   recipes: state.recipes,
   meta: state.meta,
-  categoryid: parseInt(props.match.params.categoryid, 10)
+  categoryid: parseInt(props.match.params.categoryid, 10),
+  categoryname: props.match.params.categoryname
 })
 
 const mapDispatchToProps = dispatch => ({

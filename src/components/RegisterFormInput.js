@@ -59,7 +59,7 @@ export default class RegisterFormInput extends Component {
                 required />
             <br />
             <input type="text"
-                placeholder="Enter your firstname"
+                placeholder="Enter your first name"
                 autoFocus="true"
                 name="firstname"
                 value={this.state.firstname}
@@ -67,7 +67,7 @@ export default class RegisterFormInput extends Component {
                 required />
             <br />
             <input type="text"
-                placeholder="Enter your lastname"
+                placeholder="Enter your last name"
                 autoFocus="true"
                 name="lastname"
                 value={this.state.lastname}

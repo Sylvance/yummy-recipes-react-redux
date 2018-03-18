@@ -10,7 +10,7 @@ import * as Actions from '../actions'
 
 const Category = ({categories, meta, userid, actions}) => (
   <div>
-    <CategoryHeader addCategory={actions.addCategory} userid={userid}/>
+    <CategoryHeader  addCategory={actions.addCategory} fetchCategories={actions.fetchCategories} userid={userid}/>
     <CategoryMainSection userid={userid} meta={meta} categories={categories} actions={actions} />
   </div>
 )

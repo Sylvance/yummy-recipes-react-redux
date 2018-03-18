@@ -10,7 +10,8 @@ export default class CategoryItem extends Component {
     userid: PropTypes.number.isRequired,
     category: PropTypes.object.isRequired,
     editCategory: PropTypes.func.isRequired,
-    deleteCategory: PropTypes.func.isRequired
+    deleteCategory: PropTypes.func.isRequired,
+    fetchCategories: PropTypes.func.isRequired
   }
 
   state = {
@@ -25,8 +26,10 @@ export default class CategoryItem extends Component {
   handleSave = (id, user_id, title, description) => {
     if (title.length === 0) {
       this.props.deleteCategory(id, user_id)
+      this.props.fetchCategories(user_id)
     } else {
       this.props.editCategory(id, user_id, title, description)
+      this.props.fetchCategories(user_id)
     }
     this.setState({ editing: false })
   }
@@ -53,7 +56,7 @@ export default class CategoryItem extends Component {
             <ListGroupItemText>
               {category.description}
               <br/>
-              <Link to={`/categories/${category.id}/recipes`}>View Recipes</Link>
+              <Link to={`/categories/${category.name}/${category.id}/recipes`}>View Recipes</Link>
             </ListGroupItemText>
             <Badge pill color='danger' onClick={() => deleteCategory(category.id, this.state.user_id)}>
               Delete

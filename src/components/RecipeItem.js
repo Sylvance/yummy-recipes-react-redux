@@ -10,7 +10,8 @@ export default class RecipeItem extends Component {
     categoryid: PropTypes.number.isRequired,
     recipe: PropTypes.object.isRequired,
     editRecipe: PropTypes.func.isRequired,
-    deleteRecipe: PropTypes.func.isRequired
+    deleteRecipe: PropTypes.func.isRequired,
+    fetchRecipes: PropTypes.func.isRequired
   }
 
   state = {
@@ -25,8 +26,10 @@ export default class RecipeItem extends Component {
   handleSave = (id, categoryid, title, description) => {
     if (title.length === 0) {
       this.props.deleteRecipe(id, categoryid)
+      this.props.fetchRecipes(categoryid)
     } else {
       this.props.editRecipe(id, categoryid, title, description)
+      this.props.fetchRecipes(categoryid)
     }
     this.setState({ editing: false })
   }
@@ -45,17 +48,6 @@ export default class RecipeItem extends Component {
       )
     } else {
       element = (
-        // <div>
-        //   <label onDoubleClick={this.handleDoubleClick}>
-        //     {recipe.title}
-        //   </label>
-        //   <span onDoubleClick={this.handleDoubleClick}>
-        //     {recipe.description}
-        //   </span>
-        //   <button className="destroy"
-        //           onClick={() => deleteRecipe(recipe.id, this.state.categoryid)} />
-        // </div>
-
         <ListGroup>
           <ListGroupItem>
             <ListGroupItemHeading onDoubleClick={this.handleDoubleClick}>
