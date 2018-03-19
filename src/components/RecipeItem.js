@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
 import { ListGroup, ListGroupItem, ListGroupItemHeading, ListGroupItemText, Badge } from 'reactstrap';
-import { Link } from 'react-router-dom'
 import RecipeEditFormInput from './RecipeEditFormInput'
 
 export default class RecipeItem extends Component {

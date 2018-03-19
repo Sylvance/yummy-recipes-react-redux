@@ -1,6 +1,7 @@
 # Yummy recipes
 [![Build Status](https://travis-ci.org/Sylvance/yummy-recipes-react-redux.svg?branch=master)](https://travis-ci.org/Sylvance/yummy-recipes-react-redux)
 [![Coverage Status](https://coveralls.io/repos/github/Sylvance/yummy-recipes-react-redux/badge.svg?branch=master)](https://coveralls.io/github/Sylvance/yummy-recipes-react-redux?branch=master)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/9aaafcdaa5ac442e8907e2b3276b6054)](https://www.codacy.com/app/Sylvance/yummy-recipes-react-redux?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Sylvance/yummy-recipes-react-redux&amp;utm_campaign=Badge_Grade)
 
 This is a project for yummy recipes. Users get to save their special recipes.
 

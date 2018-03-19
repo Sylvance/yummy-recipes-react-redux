@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 // import classnames from 'classnames'
 import { Row, Col } from 'reactstrap';
 import Paginator from './Pagination'
+import Search from './Search'
 
 import CategoryItem from './CategoryItem'
 
@@ -28,6 +29,10 @@ export default class CategoryMainSection extends Component {
 
     return (
       <section>
+        <Search
+          forComponent='category'
+          id={this.props.userid}
+          onSearch={this.handlePageChange}/>
         <ul className="items">
           {categories.map(category =>
             <CategoryItem key={category.id} userid={this.props.userid} category={category} {...actions} />
