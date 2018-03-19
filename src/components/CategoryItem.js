@@ -54,6 +54,7 @@ export default class CategoryItem extends Component {
             </ListGroupItemHeading>
             <ListGroupItemText>
               {category.description}
+              <span> Double Click Title to Edit</span>
               <br/>
               <a href={`/categories/${category.name}/${category.id}/recipes`}>View Recipes</a>
             </ListGroupItemText>

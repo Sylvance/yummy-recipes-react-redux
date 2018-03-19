@@ -54,6 +54,7 @@ export default class RecipeItem extends Component {
             </ListGroupItemHeading>
             <ListGroupItemText>
               {recipe.description}
+              <span> Double Click Title to Edit</span>
             </ListGroupItemText>
             <Badge pill color='danger' onClick={() => deleteRecipe(recipe.id, this.state.categoryid)}>
               Delete
