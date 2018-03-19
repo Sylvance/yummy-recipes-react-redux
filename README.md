@@ -5,6 +5,18 @@
 
 This is a project for yummy recipes. Users get to save their special recipes.
 
+## Installation
+
+Do this to install:
+
+### `clone`
+
+Run `git clone https://github.com/Sylvance/yummy-recipes-react-redux`.<br>
+
+### `install npm modules`
+
+Go to the project folder on your local machine and run  `npm install`.<br>
+
 ## Available Scripts
 
 In the project directory, you can run:
@@ -34,3 +46,35 @@ If you aren’t satisfied with the build tool and configuration choices, you can
 Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+
+
+### `npm test`
+
+**This is for running tests.**
+
+This will run all the tests and give the appropriate output.
+
+### `npm test -- --coverage`
+
+**This is for coverage.**
+
+It will generate a file for viewing the coverage.
+
+## Credits
+
+I thank:
+
+### `Andela`
+
+The learning facilitators.<br>
+
+### `Internet`
+
+For the wonderful resources.<br>
+
+## Author
+### `The CodeBender`
+
+Sylvance Kerandi Mbaka.<br>
+
+
