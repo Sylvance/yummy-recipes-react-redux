@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Search test Search should match snapshot 1`] = `
+<form
+  className=""
+  name="form"
+>
+  <div
+    className="form-group"
+  >
+    <label
+      className=""
+      htmlFor="title"
+    >
+      Search by title
+    </label>
+    <input
+      autoFocus="true"
+      className="form-control"
+      name="title"
+      onChange={[Function]}
+      placeholder="Title"
+      required={true}
+      type="text"
+    />
+  </div>
+</form>
+`;

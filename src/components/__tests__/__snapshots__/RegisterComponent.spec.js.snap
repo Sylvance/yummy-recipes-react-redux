@@ -1,0 +1,124 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RegisterComponent test RegisterComponent should match snapshot 1`] = `
+<header
+  className="header"
+>
+  <h1>
+    Register
+  </h1>
+  <form
+    className=""
+    name="form"
+    onSubmit={[Function]}
+  >
+    <div
+      className="form-group"
+    >
+      <label
+        className=""
+        htmlFor="username"
+      >
+        Username
+      </label>
+      <input
+        autoFocus="true"
+        className="form-control"
+        name="username"
+        onChange={[Function]}
+        placeholder="Enter your username"
+        required={true}
+        type="text"
+        value=""
+      />
+    </div>
+    <div
+      className="form-group"
+    >
+      <label
+        className=""
+        htmlFor="email"
+      >
+        Email
+      </label>
+      <input
+        autoFocus="true"
+        className="form-control"
+        name="email"
+        onChange={[Function]}
+        placeholder="Enter your email"
+        required={true}
+        type="email"
+        value=""
+      />
+    </div>
+    <div
+      className="form-group"
+    >
+      <label
+        className=""
+        htmlFor="password"
+      >
+        Password
+      </label>
+      <input
+        autoFocus="true"
+        className="form-control"
+        name="password"
+        onChange={[Function]}
+        placeholder="Enter your password"
+        required={true}
+        type="password"
+        value=""
+      />
+    </div>
+    <div
+      className="form-group"
+    >
+      <label
+        className=""
+        htmlFor="firstname"
+      >
+        First name
+      </label>
+      <input
+        autoFocus="true"
+        className="form-control"
+        name="firstname"
+        onChange={[Function]}
+        placeholder="Enter your first name"
+        required={true}
+        type="text"
+        value=""
+      />
+    </div>
+    <div
+      className="form-group"
+    >
+      <label
+        className=""
+        htmlFor="lastname"
+      >
+        Last Name
+      </label>
+      <input
+        autoFocus="true"
+        className="form-control"
+        name="lastname"
+        onChange={[Function]}
+        placeholder="Enter your last name"
+        required={true}
+        type="text"
+        value=""
+      />
+    </div>
+    <button
+      className="btn btn-success"
+      onClick={[Function]}
+      type={undefined}
+    >
+      Register
+    </button>
+  </form>
+</header>
+`;

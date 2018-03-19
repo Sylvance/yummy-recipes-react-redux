@@ -5,11 +5,7 @@ import { Row, Col } from 'reactstrap';
 import Paginator from './Pagination'
 
 import CategoryItem from './CategoryItem'
-import { SHOW_ALL } from '../constants/Filters'
 
-const CATEGORY_FILTERS = {
-  [SHOW_ALL]: () => true
-}
 
 export default class CategoryMainSection extends Component {
   static propTypes = {
@@ -18,8 +14,6 @@ export default class CategoryMainSection extends Component {
     actions: PropTypes.object.isRequired,
     userid: PropTypes.number.isRequired
   }
-
-  state = { filter: SHOW_ALL }
 
   componentDidMount() {
       this.props.actions.fetchCategories(this.props.userid)
@@ -31,14 +25,11 @@ export default class CategoryMainSection extends Component {
 
   render() {
     const { categories, actions } = this.props
-    const { filter } = this.state
-
-    const filteredCategories = categories.filter(CATEGORY_FILTERS[filter])
 
     return (
       <section>
         <ul className="items">
-          {filteredCategories.map(category =>
+          {categories.map(category =>
             <CategoryItem key={category.id} userid={this.props.userid} category={category} {...actions} />
           )}
         </ul>

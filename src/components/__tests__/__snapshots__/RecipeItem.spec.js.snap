@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RecipeItem test RecipeItem should match snapshot 1`] = `
+<li
+  className=""
+>
+  <ul
+    className="list-group"
+  >
+    <li
+      className="list-group-item"
+    >
+      <h5
+        className="list-group-item-heading"
+        onDoubleClick={[Function]}
+      />
+      <p
+        className="list-group-item-text"
+      />
+      <span
+        className="badge badge-danger badge-pill"
+        onClick={[Function]}
+      >
+        Delete
+      </span>
+      <a
+        href="/category"
+      >
+         Back to categories
+      </a>
+    </li>
+  </ul>
+</li>
+`;

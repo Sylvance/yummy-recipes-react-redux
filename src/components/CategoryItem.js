@@ -56,7 +56,7 @@ export default class CategoryItem extends Component {
             <ListGroupItemText>
               {category.description}
               <br/>
-              <Link to={`/categories/${category.name}/${category.id}/recipes`}>View Recipes</Link>
+              <a href={`/categories/${category.name}/${category.id}/recipes`}>View Recipes</a>
             </ListGroupItemText>
             <Badge pill color='danger' onClick={() => deleteCategory(category.id, this.state.user_id)}>
               Delete

@@ -17,7 +17,7 @@ export default (state = initialState, action) => {
       };
         
     
-      case REGISTER_USER:
+    case REGISTER_USER:
       return [
         ...{
           message: action.message,

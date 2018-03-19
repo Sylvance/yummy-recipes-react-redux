@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CategoryHeader test CategoryHeader should match snapshot 1`] = `
+<header
+  className="header"
+>
+  <h1>
+    Categories
+  </h1>
+  <button
+    className="btn btn-primary"
+    onClick={[Function]}
+    type="button"
+  >
+    Click here to add a category
+  </button>
+</header>
+`;

@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RecipeHeader test RecipeHeader should match snapshot 1`] = `
+<header
+  className="header"
+>
+  <h1>
+    Recipes
+  </h1>
+  <h5>
+    Category name : 
+    defaultString
+  </h5>
+  <button
+    className="btn btn-primary"
+    onClick={[Function]}
+    type="button"
+  >
+    Click here to add a recipe
+  </button>
+</header>
+`;

@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RecipeEditFormInput test RecipeEditFormInput should match snapshot 1`] = `
+<form
+  className=""
+  name="form"
+  onSubmit={[Function]}
+>
+  <div
+    className="form-group"
+  >
+    <label
+      className=""
+      htmlFor="title"
+    >
+      Title
+    </label>
+    <input
+      className="form-control"
+      id="title"
+      name="title"
+      onChange={[Function]}
+      placeholder="Title"
+      type="text"
+      value="defaultString"
+    />
+  </div>
+  <div
+    className="form-group"
+  >
+    <label
+      className=""
+      htmlFor="description"
+    >
+      Description
+    </label>
+    <textarea
+      className="form-control"
+      id="description"
+      name="description"
+      onChange={[Function]}
+      placeholder="Provide a description"
+      type="textarea"
+      value="defaultString"
+    />
+  </div>
+  <button
+    className="btn btn-info"
+    onClick={[Function]}
+    type={undefined}
+  >
+    Edit Recipe
+  </button>
+</form>
+`;

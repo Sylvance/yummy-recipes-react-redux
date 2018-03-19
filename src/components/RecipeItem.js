@@ -59,7 +59,7 @@ export default class RecipeItem extends Component {
             <Badge pill color='danger' onClick={() => deleteRecipe(recipe.id, this.state.categoryid)}>
               Delete
             </Badge>
-            <Link to={`/category`}> Back to categories</Link>
+            <a href={`/category`}> Back to categories</a>
           </ListGroupItem>
         </ListGroup>
       )

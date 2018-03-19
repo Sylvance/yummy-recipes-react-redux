@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CategoryItem test CategoryItem should match snapshot 1`] = `
+<li
+  className="item"
+>
+  <ul
+    className="list-group"
+  >
+    <li
+      className="list-group-item"
+    >
+      <h5
+        className="list-group-item-heading"
+        onDoubleClick={[Function]}
+      />
+      <p
+        className="list-group-item-text"
+      >
+        <br />
+        <a
+          href="/categories/undefined/undefined/recipes"
+        >
+          View Recipes
+        </a>
+      </p>
+      <span
+        className="badge badge-danger badge-pill"
+        onClick={[Function]}
+      >
+        Delete
+      </span>
+    </li>
+  </ul>
+</li>
+`;
