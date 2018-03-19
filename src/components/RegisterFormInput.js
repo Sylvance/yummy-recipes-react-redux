@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 
 export default class RegisterFormInput extends Component {
   static propTypes = {
@@ -33,49 +34,59 @@ export default class RegisterFormInput extends Component {
 
   render() {
     return (
-        <form name="form" onSubmit={this.handleSubmit}>
-            <input type="text"
+        <Form name="form" onSubmit={this.handleSubmit}>
+            <FormGroup>
+            <Label for="username">Username</Label>
+            <Input type="text"
                 placeholder="Enter your username"
                 autoFocus="true"
                 name="username"
                 value={this.state.username}
                 onChange={this.handleChange}
-                required />
-            <br />
-            <input type="email"
+                required/>
+            </FormGroup>
+            <FormGroup>
+            <Label for="email">Email</Label>
+            <Input type="email"
                 placeholder="Enter your email"
                 autoFocus="true"
                 name="email"
                 value={this.state.email}
                 onChange={this.handleChange}
-                required />
-            <br />
-            <input type="password"
+                required/>
+            </FormGroup>
+            <FormGroup>
+            <Label for="password">Password</Label>
+            <Input type="password"
                 placeholder="Enter your password"
                 autoFocus="true"
                 name="password"
                 value={this.state.password}
                 onChange={this.handleChange}
-                required />
-            <br />
-            <input type="text"
+                required/>
+            </FormGroup>
+            <FormGroup>
+            <Label for="firstname">First name</Label>
+            <Input type="text"
                 placeholder="Enter your first name"
                 autoFocus="true"
                 name="firstname"
                 value={this.state.firstname}
                 onChange={this.handleChange}
-                required />
-            <br />
-            <input type="text"
+                required/>
+            </FormGroup>
+            <FormGroup>
+            <Label for="lastname">Last Name</Label>
+            <Input type="text"
                 placeholder="Enter your last name"
                 autoFocus="true"
                 name="lastname"
                 value={this.state.lastname}
                 onChange={this.handleChange}
-                required />
-            <br />
-            <input type="submit" value="Register" />
-        </form>
+                required/>
+            </FormGroup>
+            <Button color="success">Register</Button>
+        </Form>
     )
   }
 }

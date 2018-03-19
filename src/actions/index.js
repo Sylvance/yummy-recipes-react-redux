@@ -206,7 +206,7 @@ export const loginUser = (email, password) => {
         window.location.assign('/category');
       })
       .catch(error => {
-        notify.show(error.response.data.message, 'error', 4000);
+        notify.show("An error occurred.", 'error', 4000);
       });
   };
 };
@@ -225,7 +225,7 @@ export const logoutUser = () => {
         window.location.assign("/login");
       })
       .catch(error => {
-        notify.show(error.response.data.message.message, 'error', 4000);
+        notify.show("An error occurred", 'error', 4000);
       });
   };
 };

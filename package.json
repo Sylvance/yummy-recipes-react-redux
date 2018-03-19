@@ -3,9 +3,10 @@
   "version": "0.0.1",
   "private": true,
   "devDependencies": {
+    "coveralls": "^3.0.0",
     "enzyme": "^2.8.2",
     "react-addons-test-utils": "^15.5.1",
-    "coveralls": "^3.0.0"
+    "redux-test-recorder": "^1.4.0"
   },
   "dependencies": {
     "ajv": "^6.2.1",
@@ -23,17 +24,17 @@
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.1.0",
     "react-test-renderer": "^15.5.4",
-    "reactstrap": "^5.0.0-beta.2",
+    "reactstrap": "5.0.0-beta",
     "redux": "^3.5.2",
     "redux-logger": "^3.0.6",
-    "redux-thunk": "^2.2.0"
+    "redux-test-recorder-react": "^1.0.1",
+    "redux-thunk": "^2.2.0",
+    "tape": "^4.9.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "eject": "react-scripts eject",
-    "test": "react-scripts test",
-    "coverage": "react-scripts test --env=jsdom --coverage",
-    "coveralls": "cat ./coverage/lcov.info | node node_modules/.bin/coveralls"
+    "test": "react-scripts test"
   }
 }

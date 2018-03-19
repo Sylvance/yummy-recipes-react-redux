@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 
 export default class LoginFormInput extends Component {
   static propTypes = {
@@ -27,23 +28,29 @@ export default class LoginFormInput extends Component {
 
   render() {
     return (
-        <form name="form" onSubmit={this.handleSubmit}>
-            <input type="email"
+        <Form name="form" onSubmit={this.handleSubmit}>
+          <FormGroup>
+            <Label for="email">Email</Label>
+            <Input type="email"
                 placeholder="Enter your email"
                 autoFocus="true"
                 name="email"
                 value={this.state.email}
                 onChange={this.handleChange}
-                required />
-            <input type="password"
+                required/>
+          </FormGroup>
+          <FormGroup>
+            <Label for="password">Password</Label>
+            <Input type="password"
                 placeholder="Enter your password"
                 autoFocus="true"
                 name="password"
                 value={this.state.password}
                 onChange={this.handleChange}
-                required />
-            <input type="submit" value="Login" />
-        </form>
+                required/>
+          </FormGroup>
+          <Button color="success">Login</Button>
+        </Form>
     )
   }
 }
