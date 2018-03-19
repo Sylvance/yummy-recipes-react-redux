@@ -52,7 +52,11 @@ export const fetchCategories = (userid, url) => {
           dispatch(paginate(response.data.meta))
         })
         .catch(error => {
-          notify.show(error.response.data.message, 'error', 4000);
+          if (error.response.data.message.title) {
+            notify.show(error.response.data.message.title, 'error', 4000);
+          } else {
+            notify.show(error.response.data.message, 'error', 4000);
+          }
         });
     };
 };
@@ -74,7 +78,11 @@ export const fetchRecipes = (categoryid, url) => {
         dispatch(paginate(response.data.meta))
       })
       .catch(error => {
-        notify.show(error.response.data.message, 'error', 4000);
+        if (error.response.data.message.title) {
+          notify.show(error.response.data.message.title, 'error', 4000);
+        } else {
+          notify.show(error.response.data.message, 'error', 4000);
+        }
       });
   };
 };
