@@ -1,4 +1,6 @@
 # Yummy recipes
+[![Build Status](https://travis-ci.org/Sylvance/yummy-recipes-react-redux.svg?branch=master)](https://travis-ci.org/Sylvance/yummy-recipes-react-redux)
+[![Coverage Status](https://coveralls.io/repos/github/Sylvance/yummy-recipes-react-redux/badge.svg?branch=master)](https://coveralls.io/github/Sylvance/yummy-recipes-react-redux?branch=master)
 
 This is a project for yummy recipes. Users get to save their special recipes.
 
