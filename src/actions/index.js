@@ -4,8 +4,8 @@ import {notify} from 'react-notify-toast';
 
 import authHeader from '../helpers/authHeader'
 
-// const apiUrl = 'https://resapi.herokuapp.com/';
-const apiUrl = 'http://localhost:5000/api/';
+const apiUrl = 'https://reciapi.herokuapp.com/api/';
+// const apiUrl = 'http://localhost:5000/api/';
 let uri = null
 
 export const createCategory = res => ({ type: types.ADD_CATEGORY, id: res.id, title: res.title, description: res.description  })
