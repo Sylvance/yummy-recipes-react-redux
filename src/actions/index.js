@@ -36,7 +36,7 @@ export const paginate = (meta) => ({
 
 export const fetchCategories = (userid, url) => {
     if (url) {
-      uri = `https://reciapi.herokuapp.com/${url}`
+      uri = `https://resapi.herokuapp.com${url}`
     } else {
       uri = `${apiUrl}${'users/'}${userid}${'/categories'}`
     }
@@ -62,7 +62,7 @@ export const fetchCategories = (userid, url) => {
 
 export const fetchRecipes = (categoryid, url) => {
   if (url) {
-    uri = `https://reciapi.herokuapp.com/${url}`
+    uri = `https://resapi.herokuapp.com${url}`
   } else {
     uri = `${apiUrl}${'categories/'}${categoryid}${'/recipes'}`
   }
@@ -268,7 +268,17 @@ export const registerUser = (username, email, password, firstname, lastname) => 
         window.location.assign("/login");
       })
       .catch(error => {
-        notify.show(error.response.data.message, 'error', 4000);
+        if (error.response.data.message.username) {
+          notify.show(error.response.data.message.username, 'error', 4000);
+        } 
+        if (error.response.data.message.first_name) {
+          notify.show(error.response.data.message.first_name, 'error', 4000);
+        } 
+        if (error.response.data.message.last_name) {
+          notify.show(error.response.data.message.last_name, 'error', 4000);
+        } else {
+          notify.show(error.response.data.message, 'error', 4000);
+        }
       });
   };
 };
