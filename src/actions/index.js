@@ -4,8 +4,7 @@ import {notify} from 'react-notify-toast';
 
 import authHeader from '../helpers/authHeader'
 
-const apiUrl = 'https://reciapi.herokuapp.com/api/';
-// const apiUrl = 'http://localhost:5000/api/';
+const apiUrl = 'https://resapi.herokuapp.com/api/';
 let uri = null
 
 export const createCategory = res => ({ type: types.ADD_CATEGORY, id: res.id, title: res.title, description: res.description  })
@@ -37,7 +36,7 @@ export const paginate = (meta) => ({
 
 export const fetchCategories = (userid, url) => {
     if (url) {
-      uri = `http://localhost:5000${url}`
+      uri = `https://reciapi.herokuapp.com/${url}`
     } else {
       uri = `${apiUrl}${'users/'}${userid}${'/categories'}`
     }
@@ -63,7 +62,7 @@ export const fetchCategories = (userid, url) => {
 
 export const fetchRecipes = (categoryid, url) => {
   if (url) {
-    uri = `http://localhost:5000${url}`
+    uri = `https://reciapi.herokuapp.com/${url}`
   } else {
     uri = `${apiUrl}${'categories/'}${categoryid}${'/recipes'}`
   }
