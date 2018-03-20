@@ -36,15 +36,19 @@ export default class RecipeMainSection extends Component {
 
     return (
       <section>
-        <Search
+        <span> 
+          <Search
           forComponent='recipe'
           id={this.props.categoryid}
           onSearch={this.handlePageChange}/>
+          Double Click Recipe's Title to Edit
+        </span>
         <ul className="items">
           {filteredRecipes.map(recipe =>
             <RecipeItem key={recipe.id} className="item" categoryid={this.props.categoryid} recipe={recipe} {...actions} />
           )}
         </ul>
+        <a href={`/category`}> Back to categories</a>
         <Paginator
           page={this.props.meta.page} 
           pages={this.props.meta.pages} 

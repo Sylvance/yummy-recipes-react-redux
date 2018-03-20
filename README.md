@@ -9,13 +9,17 @@ This is a project for yummy recipes. Users get to save their special recipes.
 
 Do this to install:
 
-### `clone`
+### `Clone`
 
 Run `git clone https://github.com/Sylvance/yummy-recipes-react-redux`.<br>
 
-### `install npm modules`
+### `Install npm modules`
 
 Go to the project folder on your local machine and run  `npm install`.<br>
+
+### `Heroku Application`
+
+The live app is at [https://recipesreact.herokuapp.com/](Yummy recipes).
 
 ## Available Scripts
 

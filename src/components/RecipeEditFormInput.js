@@ -22,7 +22,18 @@ export default class RecipeEditFormInput extends Component {
     e.preventDefault();
 
     const { id, categoryid, title, description } = this.state;
-    this.props.onSave(id, categoryid, title, description)
+    if (title===this.props.title && description===this.props.description) {
+      alert("Please edit first before you submit")
+    } 
+    if (title===this.props.title && description!==this.props.description) {
+      this.props.onSave(id, categoryid, null, description)
+    } 
+    if (title!==this.props.title && description===this.props.description) {
+      this.props.onSave(id, categoryid, title, null)
+    } 
+    if (title!==this.props.title && description!==this.props.description) {
+      this.props.onSave(id, categoryid, title, description)
+    } 
   }
 
   handleChange = e => {

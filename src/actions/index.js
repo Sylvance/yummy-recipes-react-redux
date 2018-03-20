@@ -133,10 +133,18 @@ export const addRecipe = (categoryid, title, description) => {
 
 export const editCategory = (id, userid, title, description) => {
   return (dispatch) => {
+    var data;
+    if(title===null){
+      data = { description: description }
+    }
+    if(description===null){
+      data = { title: title }
+    }
+    data = { title: title, description: description }
     return Axios({
             method: 'put',
             url: `${apiUrl}${'users/'}${userid}${'/categories/'}${id}`, 
-            data: { title: title, description: description },
+            data: data,
             headers: authHeader()
       })
       .then(response => {
@@ -151,10 +159,18 @@ export const editCategory = (id, userid, title, description) => {
 
 export const editRecipe = (id, categoryid, title, description) => {
   return (dispatch) => {
+    var data;
+    if(title===null){
+      data = { category_id: categoryid, description: description }
+    }
+    if(description===null){
+      data = { category_id: categoryid, title: title }
+    }
+    data = { category_id: categoryid, title: title, description: description }
     return Axios({
             method: 'put',
             url: `${apiUrl}${'categories/'}${categoryid}${'/recipes/'}${id}`, 
-            data: { category_id: categoryid, title: title, description: description },
+            data: data,
             headers: authHeader()
       })
       .then(response => {

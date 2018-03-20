@@ -110,3 +110,15 @@ header h1 {
     padding: 5px;
     margin-bottom: 1px;
 }
+
+#image1{
+    content:url(./recipes1.jpeg);
+}
+
+#image2{
+  content:url(./recipes2.jpeg);
+}
+
+#image3{
+  content:url(./recipes3.jpeg);
+}

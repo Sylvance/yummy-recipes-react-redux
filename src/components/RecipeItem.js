@@ -1,7 +1,16 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
-import { ListGroup, ListGroupItem, ListGroupItemHeading, ListGroupItemText, Badge } from 'reactstrap';
+import { Button, 
+  Modal, 
+  ModalHeader, 
+  ModalBody, 
+  ModalFooter, 
+  ListGroup, 
+  ListGroupItem, 
+  ListGroupItemHeading, 
+  ListGroupItemText, 
+  Badge } from 'reactstrap';
 import RecipeEditFormInput from './RecipeEditFormInput'
 
 export default class RecipeItem extends Component {
@@ -15,22 +24,26 @@ export default class RecipeItem extends Component {
 
   state = {
     editing: false,
-    categoryid: this.props.categoryid
+    categoryid: this.props.categoryid,
+    modal: false
+  }
+
+  toggle() {
+    this.setState({
+      modal: !this.state.modal
+    });
   }
 
   handleDoubleClick = () => {
     this.setState({ editing: true })
+    this.toggle()
   }
 
   handleSave = (id, categoryid, title, description) => {
-    if (title.length === 0) {
-      this.props.deleteRecipe(id, categoryid)
-      this.props.fetchRecipes(categoryid)
-    } else {
-      this.props.editRecipe(id, categoryid, title, description)
-      this.props.fetchRecipes(categoryid)
-    }
+    this.props.editRecipe(id, categoryid, title, description)
+    this.props.fetchRecipes(categoryid)
     this.setState({ editing: false })
+    this.toggle()
   }
 
   render() {
@@ -39,11 +52,19 @@ export default class RecipeItem extends Component {
     let element
     if (this.state.editing) {
       element = (
-        <RecipeEditFormInput onSave={this.handleSave}
+        <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
+          <ModalHeader toggle={this.toggle}>Edit Recipe</ModalHeader>
+          <ModalBody>
+            <RecipeEditFormInput onSave={this.handleSave}
                         id={recipe.id}
                         categoryid={this.state.categoryid}
                         title={recipe.title}
                         description={recipe.description} />
+          </ModalBody>
+          <ModalFooter>
+            <Button color="danger" onClick={this.toggle}>Cancel</Button>
+          </ModalFooter>
+        </Modal>
       )
     } else {
       element = (
@@ -54,12 +75,13 @@ export default class RecipeItem extends Component {
             </ListGroupItemHeading>
             <ListGroupItemText>
               {recipe.description}
-              <span> Double Click Title to Edit</span>
             </ListGroupItemText>
-            <Badge pill color='danger' onClick={() => deleteRecipe(recipe.id, this.state.categoryid)}>
+            <Badge pill color='danger' onClick={() => {
+                                            deleteRecipe(recipe.id, this.state.categoryid)
+                                            this.props.fetchRecipes(this.state.categoryid)
+                                        }}>
               Delete
             </Badge>
-            <a href={`/category`}> Back to categories</a>
           </ListGroupItem>
         </ListGroup>
       )

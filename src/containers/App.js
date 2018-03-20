@@ -4,6 +4,7 @@ import { Container, Row, Col, Collapse, Navbar, NavbarToggler, NavbarBrand, Nav,
 
 import Notification from 'react-notify-toast';
 
+import Home from './Home'
 import Category from './Category'
 import Recipe from './Recipe'
 import Login from './Login'
@@ -65,6 +66,7 @@ class App extends Component {
             <Row>
               <Col>
                 <Switch>
+                    <Route exact path="/" component={Home} />
                     <Route path='/category' component={Category}/>
                     <Route path='/categories/:categoryname/:categoryid/recipes' component={Recipe}/>
                     <Route path='/login' component={Login}/>

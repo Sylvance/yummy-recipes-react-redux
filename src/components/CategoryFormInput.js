@@ -37,7 +37,8 @@ export default class CategoryFormInput extends Component {
                 name="title" 
                 id="title" 
                 placeholder="Title" 
-                onChange={this.handleChange} />
+                onChange={this.handleChange}
+                required />
         </FormGroup>
         <FormGroup>
           <Label for="description">Description</Label>
@@ -45,7 +46,8 @@ export default class CategoryFormInput extends Component {
                 name="description" 
                 id="description"
                 placeholder="Provide a description"
-                onChange={this.handleChange} />
+                onChange={this.handleChange}
+                required />
         </FormGroup>
         <Button color="success">Add Category</Button>
       </Form>

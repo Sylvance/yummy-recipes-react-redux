@@ -1,5 +1,14 @@
 import React, { Component } from 'react'
-import { ListGroup, ListGroupItem, ListGroupItemHeading, ListGroupItemText, Badge } from 'reactstrap';
+import { Button, 
+        Modal, 
+        ModalHeader, 
+        ModalBody, 
+        ModalFooter, 
+        ListGroup, 
+        ListGroupItem, 
+        ListGroupItemHeading, 
+        ListGroupItemText, 
+        Badge } from 'reactstrap';
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
 import CategoryEditFormInput from './CategoryEditFormInput'
@@ -15,22 +24,26 @@ export default class CategoryItem extends Component {
 
   state = {
     editing: false,
-    user_id: this.props.userid
+    user_id: this.props.userid,
+    modal: false
+  }
+
+  toggle() {
+    this.setState({
+      modal: !this.state.modal
+    });
   }
 
   handleDoubleClick = () => {
     this.setState({ editing: true })
+    this.toggle()
   }
 
   handleSave = (id, user_id, title, description) => {
-    if (title.length === 0) {
-      this.props.deleteCategory(id, user_id)
-      this.props.fetchCategories(user_id)
-    } else {
-      this.props.editCategory(id, user_id, title, description)
-      this.props.fetchCategories(user_id)
-    }
+    this.props.editCategory(id, user_id, title, description)
+    this.props.fetchCategories(user_id)
     this.setState({ editing: false })
+    this.toggle()
   }
 
   render() {
@@ -39,11 +52,19 @@ export default class CategoryItem extends Component {
     let element
     if (this.state.editing) {
       element = (
-        <CategoryEditFormInput onSave={this.handleSave}
-                          id={category.id}
-                          user_id={this.state.user_id}
-                          title={category.title}
-                          description={category.description} />
+        <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
+          <ModalHeader toggle={this.toggle}>Edit Category</ModalHeader>
+          <ModalBody>
+            <CategoryEditFormInput onSave={this.handleSave}
+                            id={category.id}
+                            user_id={this.state.user_id}
+                            title={category.title}
+                            description={category.description} />
+          </ModalBody>
+          <ModalFooter>
+            <Button color="danger" onClick={this.toggle}>Cancel</Button>
+          </ModalFooter>
+        </Modal>
       )
     } else {
       element = (
@@ -54,11 +75,12 @@ export default class CategoryItem extends Component {
             </ListGroupItemHeading>
             <ListGroupItemText>
               {category.description}
-              <span> Double Click Title to Edit</span>
-              <br/>
-              <a href={`/categories/${category.name}/${category.id}/recipes`}>View Recipes</a>
+              <a href={`/categories/${category.title}/${category.id}/recipes`}>View Recipes</a>
             </ListGroupItemText>
-            <Badge pill color='danger' onClick={() => deleteCategory(category.id, this.state.user_id)}>
+            <Badge pill color='danger' onClick={() => {
+                                                  deleteCategory(category.id, this.state.user_id)
+                                                  this.props.fetchCategories(this.state.user_id)
+                                              }}>
               Delete
             </Badge>
           </ListGroupItem>

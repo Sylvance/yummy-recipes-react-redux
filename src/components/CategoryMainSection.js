@@ -33,11 +33,13 @@ export default class CategoryMainSection extends Component {
           forComponent='category'
           id={this.props.userid}
           onSearch={this.handlePageChange}/>
+        <span> Double Click Category's Title to Edit</span>
         <ul className="items">
           {categories.map(category =>
             <CategoryItem key={category.id} userid={this.props.userid} category={category} {...actions} />
           )}
         </ul>
+        <a href={`/category`}>All categories</a>
         <Row>
           <Col sm={{ size: 'auto', offset: 1 }}>
             <Paginator

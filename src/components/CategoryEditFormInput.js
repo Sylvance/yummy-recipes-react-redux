@@ -22,7 +22,18 @@ export default class CategoryEditFormInput extends Component {
     e.preventDefault();
 
     const { id, user_id, title, description } = this.state;
-    this.props.onSave(id, user_id, title, description)
+    if (title===this.props.title && description===this.props.description) {
+      alert("Please edit first before you submit")
+    } 
+    if (title===this.props.title && description!==this.props.description) {
+      this.props.onSave(id, user_id, null, description)
+    } 
+    if (title!==this.props.title && description===this.props.description) {
+      this.props.onSave(id, user_id, title, null)
+    } 
+    if (title!==this.props.title && description!==this.props.description) {
+      this.props.onSave(id, user_id, title, description)
+    } 
   }
 
   handleChange = e => {
