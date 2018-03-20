@@ -19,7 +19,7 @@ Go to the project folder on your local machine and run  `npm install`.<br>
 
 ### `Heroku Application`
 
-The live app is at [https://recipesreact.herokuapp.com/](Yummy recipes).
+The live app is at [https://recipesreact.herokuapp.com](https://recipesreact.herokuapp.com)
 
 ## Available Scripts
 
